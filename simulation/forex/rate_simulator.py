@@ -116,14 +116,3 @@ class ForexExchangeSimulator(object):
                 rate_matrix[i, j] = rates[j] / rates[i]
 
         return rate_matrix
-
-
-exchange = ForexExchangeSimulator(currencies=['DKK', 'EUR', 'USD', 'SEK'])
-exchange.step(t=1000)
-visual = ForexVisualizer(exchange)
-print(visual.lending_rates.shape)
-'''visual.plot_interest_rate()
-
-import matplotlib.pyplot as plt
-plt.plot(1,1)
-plt.show()'''

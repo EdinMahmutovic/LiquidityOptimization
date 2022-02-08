@@ -16,9 +16,12 @@ class ForexVisualizer:
             self.exchange_rates.update({currency: currency_df})
 
     def plot_interest_rate(self):
-        plt.plot(self.lending_rates, label="lending rate")
-        plt.plot(self.deposit_rates, label="deposit rate")
+        lending_rates_labels = ["lending rate " + curr for curr in self.lending_rates.columns]
+        deposit_rates_labels = ["lending rate " + curr for curr in self.deposit_rates.columns]
+        plt.plot(self.lending_rates, label=lending_rates_labels)
+        plt.plot(self.deposit_rates, label=deposit_rates_labels)
         plt.legend()
+        plt.grid()
         plt.show()
 
     def plot_currency_rate(self, currency):
@@ -26,7 +29,3 @@ class ForexVisualizer:
         plt.legend()
         plt.grid()
         plt.plot()
-
-
-
-
